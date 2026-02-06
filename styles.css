@@ -1,0 +1,357 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap");
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+body {
+    font-family: 'montserrat', serif;
+    background-color:  #0c002c;
+    margin-bottom: 40px;
+    line-height: 1.6;
+    padding: 15px;
+}
+
+.header {
+    font-family: cursive;
+    text-align: left;
+    margin-bottom: 40px;
+    margin-top: 20px;
+    
+}
+
+
+
+.Title {
+    font-family: cursive;
+    text-align: center;
+    margin-bottom: 40px;
+    
+}
+
+.Title h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 10px;
+}
+
+.SearchBar {
+   
+    border-radius: 12px;
+    justify-content: center;
+    gap: 15px;
+    display: flex;
+    flex-direction: row;
+    flex: 50%;
+    margin-bottom: 30px;
+}
+
+.Search-container {
+    
+    
+    gap: 15px;
+    position: relative;
+   
+}
+
+#SearchIcon {
+    padding: 12px 15px;
+    position: absolute;
+    color: white;
+    
+}
+.search-input {
+    background-color: rgb(39, 39, 72);
+    padding: 12px 15px;
+     border: 1px solid hsl(227, 4%, 41%);
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.3s, box-shadow 0.3s;
+    padding-left: 40px;
+    font-size: 0.85rem;
+    width: 100%;
+    
+    color: white;
+    padding-right: 40px;
+}
+
+.search-input:focus {
+    outline: none;
+    border-color: #4f46e5;
+    box-shadow: 0 0 0 2px rgba(79, 70, 229, 0.2);
+}
+
+.Search-Btn {
+    padding: 12px 15px;
+    background-color: #4f46e5;
+    border-radius: 8px;
+    border: 0px solid ;
+    color: white;
+    font-size: 0.85rem;
+    padding-right: 20px;
+    padding-left: 20px;
+
+
+}
+
+.forecast-container {
+    display: flex;
+    flex-direction: row;
+    
+    gap: 20px;
+    border-radius: 8px;
+    margin-bottom: 50px;
+    
+}
+
+.hourly-forecast {
+    flex: 0 0 35%;
+    width: 100%;
+    height: 450px;
+    padding: 1rem;
+    background-color: rgb(39, 39, 72);
+    border-radius: 8px;
+    border: 1px solid hsl(235, 9%, 29%);
+    border: 0px snow white;
+    
+    
+}
+
+
+
+.filter-group {
+    display: flex;
+    flex-direction: row;
+    align-items: start;
+    
+
+}
+
+.hourly-forecast-text {
+    flex: 1;
+    color: white;
+    margin-top: 8px;
+    text-align: left;
+    font-size: 0.90rem;
+    align-self: center;
+}
+.forecast-filter {
+    flex:1;
+    background-color:  rgb(80, 80, 97);
+    color: white;
+    margin-top: 5px;
+    padding: 7px 10px;
+    
+    font-size: 1rem;
+    border-radius: 8px;
+    border: 1px solid hsl(227, 4%, 41%);
+}
+.card-container {
+     flex: 0 0 65%;
+   
+    
+  overflow: auto;
+  
+  
+  
+}
+
+
+.card {
+    display: flex;
+    justify-content: space-between;
+  align-items: center;
+  flex-direction: row;
+     border: 1px solid hsl(227, 4%, 41%);
+    width: 100%;
+    background: linear-gradient(90deg,  hsl(227, 40%, 56%), hsl(230, 42%, 41%));
+    box-shadow:0 4px 6px rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+    padding-bottom: 4rem;
+    padding-top: 4rem;
+    padding-left: 1rem;
+    padding-right: 1rem;
+    color: white;
+}
+
+.country-date {
+    text-align: start;
+
+}
+.country-date h1 {
+    font-size: 1.6rem;
+}
+.emoji-temp {
+    
+    font-size: 3.5rem;
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    font-weight: 700;
+    letter-spacing: -2.3px;
+}
+.Emoji {
+    font-size: 2.5rem;
+    align-self: center;
+}
+.Temp {
+    font-size: 4.5rem;
+    font-style: italic;
+    
+}
+.forecast-section {
+    display: flex;
+    gap: 15px;
+    margin-top: 20px;
+    
+}
+
+.forecast-card{
+    flex: 1;
+   
+    font-size: 0.85rem;
+    border-radius: 8px;
+    
+    color: white;
+    padding: 1rem;
+     border: 1px solid hsl(235, 9%, 29%);
+    background-color: rgb(39, 39, 72);
+}
+.forecast-card p {
+    font-size: 1.2rem;
+    font-weight: 700;
+}
+.forecast-card span {
+    color: rgb(221, 221, 221);
+    font-size: 0.80rem;
+}
+
+.daily-forecast-text {
+    margin-top: 20px;
+    margin-bottom:  20px;
+    font-size: 1.3rem;
+    font-weight: 700;
+    color: white;
+}
+
+.daily-forecast {
+    display: flex;
+    gap: 10px;
+    margin-top: 20px;
+    
+}
+
+.daily-card{
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    gap: 15px;
+   text-align: center;
+    
+    font-size: 0.85rem;
+    border-radius: 8px;
+     border: 1px solid hsl(235, 9%, 29%);
+    color: white;
+    padding: 1rem;
+    margin-bottom: 40px;
+    
+    background-color: rgb(39, 39, 72);
+}
+
+.daily-card p {
+    color: rgb(221, 221, 221);
+    font-size: 0.80rem;
+}
+
+#dailyEmoji {
+    font-size: 2rem;
+}
+
+.highLow {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    text-align: start;
+    
+
+}
+.time-temp-container {
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    overflow: auto;
+    height: 90%;
+    margin-top: 10px;
+    
+}
+.time-temp-container::-webkit-scrollbar {
+  display: none; 
+}
+.time-temp {
+    padding: 15px 18px;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    
+    border: 1px solid hsl(235, 9%, 29%);
+    border-radius: 8px;
+    background-color:  rgb(80, 80, 97);
+    color: white;
+    margin-top: 5px;
+    
+    
+    
+    
+    border: 0px solid white;
+}
+.hourly-emoji {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    font-size: 0.85rem;
+}
+#hourlyEmoji {
+    align-self: center;
+    font-size: 1.2rem;
+}
+.hourly-temp {
+    font-weight: 600;
+    font-size: 0.85rem;
+}
+
+
+.empty-state {
+    text-align: center;
+    padding: 60px 20px;
+    opacity: 0.6;
+    display: none; 
+}
+
+.empty-state i {
+    font-size: 4rem;
+    color: #ddd;
+    margin-bottom: 20px;
+}
+
+.empty-state h3 {
+    font-size: 1.5rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.empty-state p {
+    color: #999;
+    margin-bottom: 20px;
+}
