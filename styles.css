@@ -167,7 +167,7 @@ body {
 
 .card {
     display: flex;
-    justify-content: space-between;
+    
   align-items: center;
   flex-direction: row;
      border: 1px solid hsl(227, 4%, 41%);
@@ -184,13 +184,13 @@ body {
 
 .country-date {
     text-align: start;
-
+    flex: 8;
 }
 .country-date h1 {
     font-size: 1.6rem;
 }
 .emoji-temp {
-    
+    flex: 2;
     font-size: 3.5rem;
     display: flex;
     flex-direction: row;
@@ -198,6 +198,7 @@ body {
     font-weight: 700;
     letter-spacing: -2.3px;
 }
+
 .Emoji {
     font-size: 2.5rem;
     align-self: center;
@@ -205,6 +206,7 @@ body {
 .Temp {
     font-size: 4.5rem;
     font-style: italic;
+    margin-right: 1rem;
     
 }
 .forecast-section {
@@ -283,6 +285,10 @@ body {
     text-align: start;
     
 
+}
+
+.High {
+    font-weight: 700;
 }
 .time-temp-container {
     display: flex;
