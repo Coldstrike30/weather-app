@@ -19,31 +19,55 @@ filter.addEventListener("click", filterSelect);
 
 let weekdayName =[];
 
-async function fetchData(query) {
-    try{
-       
-        const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3ece03829e6540d6a27101023260602&q=${query}&days=7&aqi=no&alerts=no`);
-        const data = await response.json();
 
-        return data;
-        
-        
-    }catch(error){
-        console.error(error);
+
+async function fetchData(query) {
+  try {
+    const response = await fetch(`https://api.weatherapi.com/v1/forecast.json?key=3ece03829e6540d6a27101023260602&q=${query}&days=7&aqi=no&alerts=no`);
+
+    if (!response.ok) {
+      throw new Error("Location not found");
     }
-};
+
+    const data = await response.json();
+    return data;
+
+  } catch (error) {
+    console.error(error);
+    return null;
+  }
+}
+
 
 async function onSubmit(e) {
     e.preventDefault();
+    
 
     card.innerHTML = "";
     forecast.innerHTML = "";
     daily.innerHTML = "";
     hourly.innerHTML = "";
 
-    const query = search.value;
+    const query = search.value.trim();
+
+    if (!query) {
+    alert("Please enter a location");
+    renderPage(); 
+    return;
+}
+
+    
     
     const result = await fetchData(query);
+
+
+
+    if (!result) {
+    alert("Location not found");
+     renderPage(); 
+    return;
+}
+
     weekdayName = DateTransform(result.forecast.forecastday);
     
     weekdayName.map(day => {
@@ -73,7 +97,10 @@ async function onSubmit(e) {
 
     
 
-    if (!query) return alert("please fill out the form");
+    if (query === '') {
+        alert('please fill out the search bar');
+        return;
+    }
 
     const country = document.createElement('div');
     country.classList.add('country-date');
@@ -81,6 +108,7 @@ async function onSubmit(e) {
     ${result.location.region}</h1>
         <p id = "DateTime" class = "Date">${weekdayName[0].fullday}</p>
         </div> `;
+        
     const current = document.createElement('div');
     current.classList.add('emoji-temp');
     current.innerHTML = `<P class = "Emoji">☀️</P>
@@ -129,16 +157,17 @@ async function onSubmit(e) {
                   daily.appendChild(dailyCard);
     });
     
-        
+       
         card.appendChild(country);
         card.appendChild(current);
         forecast.appendChild(foreTemp);
         forecast.appendChild(foreHumi);
         forecast.appendChild(foreWind);
         forecast.appendChild(forePrec);
+        search.value = "";
         
-        renderPage();
         filterSelect();
+         renderPage();
 
 };
 
@@ -152,6 +181,8 @@ function renderPage() {
     container.style.display = "none";
     empty.style.display = "block";
   };
+
+  console.log(x)
 };
 
 function DateTransform (trans) {
