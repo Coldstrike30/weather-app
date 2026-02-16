@@ -43,6 +43,8 @@ body {
     margin-bottom: 10px;
 }
 
+
+
 .SearchBar {
    
     border-radius: 12px;
@@ -61,6 +63,11 @@ body {
     position: relative;
    
 }
+
+
+
+
+
 
 #SearchIcon {
     padding: 12px 15px;
@@ -113,7 +120,7 @@ body {
 }
 
 .hourly-forecast {
-    flex: 0 0 35%;
+   flex: 0 0 35%;
     width: 100%;
     height: 450px;
     padding: 1rem;
@@ -123,6 +130,15 @@ body {
     border: 0px snow white;
     
     
+}
+.card-container {
+     flex: 0 0 65%;
+   
+    
+  overflow: auto;
+  
+  
+  
 }
 
 
@@ -134,7 +150,6 @@ body {
     
 
 }
-
 .hourly-forecast-text {
     flex: 1;
     color: white;
@@ -143,6 +158,20 @@ body {
     font-size: 0.90rem;
     align-self: center;
 }
+
+.time-temp-container {
+    display: flex;
+    flex-direction: column;
+    gap:4px;
+    overflow: auto;
+    height: 90%;
+    margin-top: 10px;
+    
+}
+
+
+
+
 .forecast-filter {
     flex:1;
     background-color:  rgb(80, 80, 97);
@@ -154,15 +183,7 @@ body {
     border-radius: 8px;
     border: 1px solid hsl(227, 4%, 41%);
 }
-.card-container {
-     flex: 0 0 65%;
-   
-    
-  overflow: auto;
-  
-  
-  
-}
+
 
 
 .card {
@@ -213,6 +234,7 @@ body {
     display: flex;
     gap: 15px;
     margin-top: 20px;
+    flex-wrap: wrap;
     
 }
 
@@ -248,11 +270,13 @@ body {
     display: flex;
     gap: 10px;
     margin-top: 20px;
+    flex-wrap: wrap;
     
 }
 
 .daily-card{
-    flex: 1;
+    flex: 1 1 75px;
+    min-width: 0;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -272,6 +296,10 @@ body {
 .daily-card p {
     color: rgb(221, 221, 221);
     font-size: 0.80rem;
+    white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+    
 }
 
 #dailyEmoji {
@@ -290,15 +318,7 @@ body {
 .High {
     font-weight: 700;
 }
-.time-temp-container {
-    display: flex;
-    flex-direction: column;
-    gap:4px;
-    overflow: auto;
-    height: 90%;
-    margin-top: 10px;
-    
-}
+
 .time-temp-container::-webkit-scrollbar {
   display: none; 
 }
@@ -360,4 +380,35 @@ body {
 .empty-state p {
     color: #999;
     margin-bottom: 20px;
+}
+
+@media (max-width: 1000px) {
+    .forecast-container {
+        flex-direction: column;
+    }
+
+    .forecast-container > div {
+       
+        width: 100%;
+    }
+
+    
+}
+
+@media (max-width: 916px) {
+    .filter-group {
+        flex-direction: column;
+    }
+    .hourly-forecast-text {
+        margin-top: 2px;
+    }
+    .hourly-forecast {
+        padding-top: 2px;
+        
+    }
+    .time-temp-container {
+        height: 83%;
+    }
+
+   
 }
