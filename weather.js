@@ -79,7 +79,7 @@ async function onSubmit(e) {
     country.classList.add('country-date');
     country.innerHTML = `<h1 id="countryLocation" class = "Country">${result.location.country}, 
     ${result.location.region}</h1>
-        <p id = "DateTime" class = "Date">${result.location.localtime}</p>
+        <p id = "DateTime" class = "Date">${weekdayName[0].fullday}</p>
         </div> `;
     const current = document.createElement('div');
     current.classList.add('emoji-temp');
@@ -161,11 +161,17 @@ return trans.map(day =>  {
     
     const weekday = dateObj.toLocaleDateString('en-US', {weekday: 'long'});
     const dateday = dateObj.toLocaleDateString('en-US', {weekday: 'long'});
+    const fullday = dateObj.toLocaleDateString('en-US', {
+    month: 'long',
+    day: '2-digit',
+    year: 'numeric',
+    });
+
    
     return {
     weekday,
     dateday,
-    
+    fullday,
     hour : day.hour,
     day : day.day,
     date : day.date,
